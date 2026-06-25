@@ -1,50 +1,183 @@
-# React + TypeScript + Vite
+# Blog Platform Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend application for a modern blogging platform built with React and Vite.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Responsive Design
+- Authentication Pages
+- Create/Edit Blog Posts
+- Draft Management
+- Category Filtering
+- Tag Filtering
+- REST API Integration
+- Modern User Experience
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## Tech Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+| Technology | Version |
+|------------|----------|
+| React | Latest |
+| Vite | Latest |
+| React Router | Latest |
+| Axios | Latest |
+| CSS/Tailwind | Optional |
+
+---
+
+## Project Structure
+
+```text
+src
+
+├── components
+├── pages
+│   ├── Login
+│   ├── Home
+│   ├── PostDetails
+│   ├── CreatePost
+│   └── EditPost
+│
+├── services
+│
+├── hooks
+│
+├── routes
+│
+├── layouts
+│
+└── assets
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Screens
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### Public
+
+- Home Page
+- Blog Details
+- Categories
+- Tags
+
+### Protected
+
+- Dashboard
+- Create Post
+- Edit Post
+- Draft Posts
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/yourusername/blog-frontend.git
+cd blog-frontend
 ```
+
+### Install Packages
+
+```bash
+npm install
+```
+
+### Run Development Server
+
+```bash
+npm run dev
+```
+
+Application runs at:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## Environment Variables
+
+Create:
+
+```env
+.env
+```
+
+```env
+VITE_API_URL=http://localhost:8080/api/v1
+```
+
+---
+
+## API Communication
+
+Example:
+
+```javascript
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL
+});
+```
+
+---
+
+## Authentication
+
+JWT token is stored in browser storage and attached to every protected request.
+
+Example:
+
+```http
+Authorization: Bearer <token>
+```
+
+---
+
+## Build Production
+
+```bash
+npm run build
+```
+
+Output:
+
+```text
+dist/
+```
+
+---
+
+## Deployment
+
+Frontend can be deployed on:
+
+- Nginx
+- Vercel
+- Netlify
+- Docker
+
+---
+
+## Future Improvements
+
+- Dark Mode
+- Rich Text Editor
+- Markdown Support
+- Search Functionality
+- User Profiles
+- Infinite Scroll
+
+---
+
+## Author
+
+Radman Hayati
